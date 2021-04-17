@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="https:///www.thymeleaf.org/thymeleaf-extras-sprinfsecurity5"
+      layout:decorator="template1"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+</head>
+<body>
+<div layout:fragment="pageContent">
+    <div class="mt-5">
+        <h3 class="d-flex text-danger justify-content-center align-items-center">
+            Vous n'êtes pas autorisé à accéder à cette page
+        </h3>
+    </div>
+</div>
+
+</body>
+</html>
