@@ -42,9 +42,9 @@ private PatientRepository patientRepository;
         return "patients";
     }
     @GetMapping("/deletePatient")
-    public String delete(Long id ,String keyword ,int page , int size){
+    public String delete(Long id ,String keyword ,int page ){
         patientRepository.deleteById(id);
-        return "redirect:/patients?page="+page+"&size="+size+"&keyword="+keyword;
+        return "redirect:/patients?page="+page+"&keyword="+keyword;
     }
     @GetMapping("/formPatient")
     public String formPatient(Model model){
