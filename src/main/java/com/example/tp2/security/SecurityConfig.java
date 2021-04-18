@@ -28,6 +28,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+
+
+        auth.authenticationProvider(authenticationProvider());
 /*
         PasswordEncoder passwordEncoder = passwordEncoder();
         System.out.println("************");
@@ -39,7 +42,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authoritiesByUsernameQuery("select username as principal, role as role from users_roles where username=?")
                 .rolePrefix("ROLE_")
                 .passwordEncoder(passwordEncoder);*/
-/*
+        /*
         auth.inMemoryAuthentication().withUser("user1")
                 .password(passwordEncoder.encode("1234")).roles("USER");
 
@@ -47,7 +50,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .password(passwordEncoder.encode("1234")).roles("USER");
         auth.inMemoryAuthentication().withUser("admin")
                 .password(passwordEncoder.encode("1234")).roles("USER","ADMIN");*/
-        auth.authenticationProvider(authenticationProvider());
+
     }
     @Override
     protected void configure(HttpSecurity http) throws Exception {
